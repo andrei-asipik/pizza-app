@@ -14,5 +14,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'comma-dangle': ['error', 'never'],
+    'react/prop-types': [0],
   },
-}
+};
