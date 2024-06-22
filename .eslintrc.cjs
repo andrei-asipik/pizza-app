@@ -14,7 +14,17 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    'comma-dangle': ['error', 'never'],
+    quotes: ['error', 'single'],
     'react/prop-types': [0],
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'never',
+        exports: 'never',
+        functions: 'never',
+      },
+    ],
   },
 };
