@@ -6,18 +6,14 @@ import { PREFIX } from '../../helpers/API';
 import { Product } from '../../components/intefaces/product.interface';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
 
 function Menu() {
   const [products, setProducts] = useState<Product[]>([]);
 
   const getMenu = async () => {
     try {
-      const res = await fetch(`${PREFIX}/products`);
-      if (!res.ok) {
-        return;
-      }
-
-      const data: Product[] = await res.json();
+      const { data } = await axios.get<Product[]>(`${PREFIX}/products`);
       setProducts(data);
     } catch (e) {
       console.error(e);
