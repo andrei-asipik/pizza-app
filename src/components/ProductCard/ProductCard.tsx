@@ -18,11 +18,12 @@ function ProductCart({ ...props }: ProductCardProps) {
           <button className={styles['add-to-cart']}>
             <img src="/add-to-cart-icon.svg" alt="add-to-cart-icon" />
           </button>
+          <div className={styles['rating']}>
+            {rating}&nbsp;
+            <img src="/star.svg" alt="star" />
+          </div>
         </div>
-        <div className={styles['rating']}>
-          {rating}&nbsp;
-          <img src="/star.svg" alt="star" />
-        </div>
+
         <div className={styles['footer']}>
           <div className={styles['title']}>{title}</div>
           <div className={styles['description']}>{description}</div>
