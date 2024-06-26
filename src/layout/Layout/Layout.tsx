@@ -1,6 +1,11 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.css';
 import Button from '../../components/Button/Button';
+import classNames from 'classnames';
+
+const activeLink = (isActive: boolean) => {
+  return classNames(styles['link'], { [styles.active]: isActive });
+};
 
 function Layout() {
   return (
@@ -13,21 +18,24 @@ function Layout() {
         </div>
 
         <div className={styles['menu']}>
-          <Link to="/" className={styles['link']}>
+          <NavLink to="/" className={({ isActive }) => activeLink(isActive)}>
             <img src="/menu-icon.svg" alt="menu-icon" />
             Меню
-          </Link>
-          <Link to="/cart" className={styles['link']}>
+          </NavLink>
+          <NavLink
+            to="/cart"
+            className={({ isActive }) => activeLink(isActive)}
+          >
             <img src="/cart-icon.svg" alt="cart-icon" />
             Корзина
-          </Link>
+          </NavLink>
         </div>
         <Button className={styles['exit']}>
           <img src="/exit-icon.svg" alt="exit-icon" />
           Выход
         </Button>
       </div>
-      <div>
+      <div className={styles['content']}>
         <Outlet />
       </div>
     </div>
