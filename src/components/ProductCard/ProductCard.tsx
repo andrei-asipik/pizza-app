@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './ProductCard.module.css';
 import { ProductCardProps } from './ProductCard.props';
 
-function ProductCart({ ...props }: ProductCardProps) {
+function ProductCard({ ...props }: ProductCardProps) {
   const { rating, price, description, title, image, id } = props;
   return (
     <Link to={`/product/${id}`} className={styles['link']}>
@@ -33,4 +33,4 @@ function ProductCart({ ...props }: ProductCardProps) {
   );
 }
 
-export default ProductCart;
+export default ProductCard;
