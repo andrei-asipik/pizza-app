@@ -2,7 +2,7 @@ import Headling from '../../components/Headling/Headling';
 import Search from '../../components/Search/Search';
 import styles from './Menu.module.css';
 import { PREFIX } from '../../helpers/API';
-import { Product } from '../../components/intefaces/product.interface';
+import { Product } from '../../intefaces/product.interface';
 import { useEffect, useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { MenuList } from './MenuList/MenuList';
@@ -15,11 +15,7 @@ function Menu() {
   const getMenu = async () => {
     try {
       setIsLoading(true);
-      await new Promise<void>((resolve) => {
-        setTimeout(() => {
-          resolve();
-        }, 2000);
-      });
+
       const { data } = await axios.get<Product[]>(`${PREFIX}/products`);
       setProducts(data);
       setIsLoading(false);
