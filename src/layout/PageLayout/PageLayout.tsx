@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import styles from './Layout.module.css';
+import styles from './PageLayout.module.css';
 import Button from '../../components/Button/Button';
 import classNames from 'classnames';
 
@@ -7,7 +7,7 @@ const activeLink = (isActive: boolean) => {
   return classNames(styles['link'], { [styles.active]: isActive });
 };
 
-function Layout() {
+function PageLayout() {
   return (
     <div className={styles['layout']}>
       <div className={styles['sidebar']}>
@@ -42,4 +42,4 @@ function Layout() {
   );
 }
 
-export default Layout;
+export default PageLayout;
