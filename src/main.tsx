@@ -12,11 +12,16 @@ import axios from 'axios';
 import Login from './pages/Login/Login.tsx';
 import Register from './pages/Register/Register.tsx';
 import { AuthLayout } from './layout/Auth/AuthLayout.tsx';
+import { RequireAuth } from './helpers/RequireAuth.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: (
+      <RequireAuth>
+        <Layout />
+      </RequireAuth>
+    ),
     children: [
       { path: '/', element: <Menu /> },
       { path: '/cart', element: <Cart /> },

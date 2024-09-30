@@ -1,13 +1,19 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './PageLayout.module.css';
 import Button from '../../components/Button/Button';
 import classNames from 'classnames';
 
-const activeLink = (isActive: boolean) => {
-  return classNames(styles['link'], { [styles.active]: isActive });
-};
-
 function PageLayout() {
+  const navigate = useNavigate();
+
+  const activeLink = (isActive: boolean) => {
+    return classNames(styles['link'], { [styles.active]: isActive });
+  };
+
+  const logout = () => {
+    localStorage.removeItem('jwt');
+    navigate('/auth/login');
+  };
   return (
     <div className={styles['layout']}>
       <div className={styles['sidebar']}>
@@ -30,7 +36,7 @@ function PageLayout() {
             Корзина
           </NavLink>
         </div>
-        <Button className={styles['exit']}>
+        <Button className={styles['exit']} onClick={() => logout()}>
           <img src="/exit-icon.svg" alt="exit-icon" />
           Выход
         </Button>

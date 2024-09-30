@@ -1,14 +1,15 @@
 .login {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   width: 100%;
   max-width: 500px;
+  gap: 30px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  position: relative;
   gap: 30px;
 }
 
@@ -19,8 +20,7 @@
 }
 
 .field label {
-  color: #c4c4c4;
-  font-size: 17px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
 }
@@ -39,7 +39,12 @@
 }
 
 .error {
-  background: #ffc529;
-  color: white;
-  padding: 20px;
+  position: absolute;
+  bottom: 90px;
+  color: rgb(255, 0, 0);
+}
+
+.button {
+  margin: 40px auto 0;
+  width: 250px;
 }
