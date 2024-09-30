@@ -44,7 +44,7 @@
   background: var(--white-color);
   padding: 3px 10px;
   border-radius: 20px;
-  color: #111719;
+  color: var(--text-color);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -62,7 +62,7 @@
   background: var(--white-color);
   padding: 3px 8px;
   border-radius: 20px;
-  color: #111719;
+  color: var(--text-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
