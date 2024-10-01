@@ -2,18 +2,23 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './PageLayout.module.css';
 import Button from '../../components/Button/Button';
 import classNames from 'classnames';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../store/store';
+import { userActions } from '../../store/user.slice';
 
 function PageLayout() {
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
   const activeLink = (isActive: boolean) => {
     return classNames(styles['link'], { [styles.active]: isActive });
   };
 
   const logout = () => {
-    localStorage.removeItem('jwt');
+    dispatch(userActions.logout());
     navigate('/auth/login');
   };
+
   return (
     <div className={styles['layout']}>
       <div className={styles['sidebar']}>
