@@ -2,11 +2,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect } from 'react';
 import Headling from '../../components/Headling/Headling';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
-import { login } from '../../store/user.slice';
+import { login, userActions } from '../../store/user.slice';
 
 export type LoginForm = {
   email: {
@@ -18,10 +18,9 @@ export type LoginForm = {
 };
 
 function Login() {
-  const [error, setError] = useState<string | null>();
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-  const jwt = useSelector((s: RootState) => s.user.jwt);
+  const { jwt, loginErrorMessage } = useSelector((s: RootState) => s.user);
 
   useEffect(() => {
     if (jwt) {
@@ -31,7 +30,7 @@ function Login() {
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
-    setError(null);
+    dispatch(userActions.clearLoginError());
     const target = e.target as typeof e.target & LoginForm;
     const { email, password } = target;
     await sendLogin(email.value, password.value);
@@ -59,7 +58,9 @@ function Login() {
             placeholder="Пароль"
           />
         </div>
-        {error && <div className={styles['error']}>{error}</div>}
+        {loginErrorMessage && (
+          <div className={styles['error']}>{loginErrorMessage}</div>
+        )}
         <Button appearance="big" className={styles['button']}>
           Вход
         </Button>
