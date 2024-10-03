@@ -20,7 +20,9 @@ export type LoginForm = {
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-  const { jwt, loginErrorMessage } = useSelector((s: RootState) => s.user);
+  const { jwt, loginErrorMessage } = useSelector(
+    (state: RootState) => state.user,
+  );
 
   useEffect(() => {
     if (jwt) {
