@@ -10,12 +10,12 @@ import { useEffect } from 'react';
 function PageLayout() {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
+  const profile = useSelector((state: RootState) => state.user.profile);
+  const items = useSelector((state: RootState) => state.cart.items);
 
   const activeLink = (isActive: boolean) => {
     return classNames(styles['link'], { [styles.active]: isActive });
   };
-
-  const profile = useSelector((state: RootState) => state.user.profile);
 
   useEffect(() => {
     dispatch(getProfile());
@@ -45,7 +45,7 @@ function PageLayout() {
             className={({ isActive }) => activeLink(isActive)}
           >
             <img src="/cart-icon.svg" alt="cart-icon" />
-            Корзина
+            Корзина {items.reduce((acc, item) => (acc += item.count), 0)}
           </NavLink>
         </div>
         <Button className={styles['exit']} onClick={() => logout()}>
