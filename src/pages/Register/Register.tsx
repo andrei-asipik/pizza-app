@@ -79,7 +79,7 @@ function Register() {
         </Button>
       </form>
       <div className={styles['links']}>
-        <div>Усть аккаунт?</div>
+        <div>Есть аккаунт?</div>
         <Link to="/auth/login">Войти</Link>
       </div>
     </div>

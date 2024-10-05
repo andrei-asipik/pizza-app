@@ -45,7 +45,10 @@ function PageLayout() {
             className={({ isActive }) => activeLink(isActive)}
           >
             <img src="/cart-icon.svg" alt="cart-icon" />
-            Корзина {items.reduce((acc, item) => (acc += item.count), 0)}
+            Корзина
+            <div className={styles['cart-counter']}>
+              {items.reduce((acc, item) => (acc += item.count), 0)}
+            </div>
           </NavLink>
         </div>
         <Button className={styles['exit']} onClick={() => logout()}>
