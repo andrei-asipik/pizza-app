@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import styles from './ProductCard.module.css';
 import { ProductCardProps } from './ProductCard.props';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../store/store';
-import { cartActions } from '../../store/cart.slice';
+import { AppDispatch } from '../../../store/store';
+import { cartActions } from '../../../store/cart.slice';
 
 function ProductCard({ ...props }: ProductCardProps) {
   const dispatch = useDispatch<AppDispatch>();
