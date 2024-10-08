@@ -1,5 +1,5 @@
-import Headling from '../../components/Headling/Headling';
-import Search from '../../components/Search/Search';
+import Headling from '../../components/atoms/Headling/Headling';
+import Search from '../../components/atoms/Search/Search';
 import styles from './Menu.module.css';
 import { PREFIX } from '../../helpers/API';
 import { Product } from '../../intefaces/product.interface';
@@ -43,7 +43,7 @@ function Menu() {
   return (
     <>
       <div className={styles['head']}>
-        <Headling>Menu</Headling>
+        <Headling>Меню</Headling>
         <Search
           placeholder="Введите блюдо или состав"
           onChange={updateFilter}

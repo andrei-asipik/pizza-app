@@ -1,6 +1,6 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './PageLayout.module.css';
-import Button from '../../components/Button/Button';
+import Button from '../../components/atoms/Button/Button';
 import classNames from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';

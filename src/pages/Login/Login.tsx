@@ -1,9 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
-import Button from '../../components/Button/Button';
-import Input from '../../components/Input/Input';
+import Button from '../../components/atoms/Button/Button';
+import Input from '../../components/atoms/Input/Input';
 import { FormEvent, useEffect } from 'react';
-import Headling from '../../components/Headling/Headling';
+import Headling from '../../components/atoms/Headling/Headling';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import { login, userActions } from '../../store/user.slice';

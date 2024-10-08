@@ -1,4 +1,4 @@
-import ProductCard from '../../../components/ProductCard/ProductCard';
+import ProductCard from '../../../components/molecules/ProductCard/ProductCard';
 import { v4 as uuidv4 } from 'uuid';
 import { MenuListProps } from './MenuList.props';
 
