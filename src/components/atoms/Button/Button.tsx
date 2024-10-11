@@ -6,6 +6,7 @@ function Button({
   children,
   className,
   appearance = 'small',
+  isRound = false,
   ...props
 }: ButtonProps) {
   return (
@@ -13,6 +14,7 @@ function Button({
       className={classNames(styles['button'], styles['accent'], className, {
         [styles['small']]: appearance === 'small',
         [styles['big']]: appearance === 'big',
+        [styles['round']]: isRound,
       })}
       {...props}
     >

@@ -1,20 +1,20 @@
 .button {
-  font-family: inherit;
+  padding: 0.6rem 1.2rem;
   border: 1px solid transparent;
   border-radius: 28px;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 600;
-  font-family: inherit;
   background-color: var(--primary-color);
-  cursor: pointer;
   transition: border-color 0.25s;
+  font-family: inherit;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .big {
   padding: 20px 0;
-  text-transform: uppercase;
   border-radius: 36px;
+  text-transform: uppercase;
 }
 
 .small {
@@ -22,10 +22,20 @@
 }
 
 .accent {
-  background: var(--primary-color);
   width: 200px;
+  background: var(--primary-color);
 }
 
 .accent:hover {
   background: var(--primary-hover-color);
+}
+
+.round {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
 }
