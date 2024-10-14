@@ -37,7 +37,7 @@ function CartItem(props: CartItemProps) {
           <Button isRound className={styles['plus']}>
             <img src="../../../public/plus.svg" />
           </Button>
-          <Button isRound className={styles['add-to-cart']}>
+          <Button isRound className={styles['transparent']}>
             <img src="../../../public/cross-mark.svg" />
           </Button>
         </div>
