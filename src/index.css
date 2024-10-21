@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  background: #454549;
   margin: 0;
+  background: #454549;
+  font-family: 'Open Sans', sans-serif;
 }

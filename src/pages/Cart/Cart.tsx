@@ -26,8 +26,8 @@ function Cart() {
 
   useEffect(() => {
     loadAllItems();
-    console.log('cartProducts:', cartProducts);
-    console.log('store.getState().cart:', store.getState().cart);
+    // console.log('cartProducts:', cartProducts);
+    // console.log('store.getState().cart:', store.getState().cart);
   }, []);
 
   return (
@@ -52,6 +52,7 @@ function Cart() {
               title={name}
               price={price}
               image={image}
+              count={i.count}
             />
           );
         })}

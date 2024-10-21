@@ -4,16 +4,15 @@
 }
 
 .logo {
-  flex: 1;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
 }
 
 .content {
-  border-left: 1px solid var(--separator-color);
-  flex: 1;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
 }
